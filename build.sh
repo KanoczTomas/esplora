@@ -18,6 +18,7 @@ rm -rf $DEST/*
 # Static assets
 cp -rL www/* $CUSTOM_ASSETS $DEST/
 
+
 # CSS customizations
 [ -n "$CUSTOM_CSS" ] && cat $CUSTOM_CSS >> $DEST/style.css
 

@@ -1,3 +1,15 @@
+
+# Warning !
+
+You are on a branch that was edited to run on Bisq DAO testnet, switch to master for clean Esplora!
+
+Read how to setup your own block explorer on the [DAO testnet](DAO.md).
+
+The below steps for bitcoin mainet, testnet3 or liquid were commented out on this branch to make building the docker image faster. Switch to master to build those!
+
+---------
+
+
 # Esplora Block Explorer
 
 [![build status](https://api.travis-ci.org/Blockstream/electrs.svg)](https://travis-ci.org/Blockstream/electrs)

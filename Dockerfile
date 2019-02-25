@@ -23,18 +23,20 @@ SHELL ["/bin/bash", "-c"]
 RUN source /root/.nvm/nvm.sh \
  && npm config set unsafe-perm true \
  && npm install && (cd prerender-server && npm run dist) \
- && DEST=/srv/explorer/static/bitcoin-mainnet \
-    npm run dist -- bitcoin-mainnet \
- && DEST=/srv/explorer/static/bitcoin-testnet \
-    npm run dist -- bitcoin-testnet \
- && DEST=/srv/explorer/static/liquid-mainnet \
-    npm run dist -- liquid-mainnet \
- && DEST=/srv/explorer/static/bitcoin-mainnet-blockstream \
-    npm run dist -- bitcoin-mainnet blockstream \
- && DEST=/srv/explorer/static/bitcoin-testnet-blockstream \
-    npm run dist -- bitcoin-testnet blockstream \
- && DEST=/srv/explorer/static/liquid-mainnet-blockstream \
-    npm run dist -- liquid-mainnet blockstream
+# && DEST=/srv/explorer/static/bitcoin-mainnet \
+#    npm run dist -- bitcoin-mainnet \
+# && DEST=/srv/explorer/static/bitcoin-testnet \
+#    npm run dist -- bitcoin-testnet \
+# && DEST=/srv/explorer/static/liquid-mainnet \
+#    npm run dist -- liquid-mainnet \
+# && DEST=/srv/explorer/static/bitcoin-mainnet-blockstream \
+#    npm run dist -- bitcoin-mainnet blockstream \
+# && DEST=/srv/explorer/static/bitcoin-testnet-blockstream \
+#    npm run dist -- bitcoin-testnet blockstream \
+# && DEST=/srv/explorer/static/liquid-mainnet-blockstream \
+#    npm run dist -- liquid-mainnet blockstream \
+ && DEST=/srv/explorer/static/bitcoin-regtest\
+    npm run dist -- bitcoin-regtest
 
 # configuration
 RUN cp /srv/explorer/source/contrib/*.conf.in /srv/explorer/source/contrib/*torrc /srv/explorer/source/run.sh /srv/explorer/source/cli.sh.in /srv/explorer/

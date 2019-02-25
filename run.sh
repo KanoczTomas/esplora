@@ -40,6 +40,12 @@ if [ "${DAEMON}" != "liquid" ]; then
         NGINX_REWRITE='rewrite ^/testnet(/.*)$ $1 break;'
         NGINX_REWRITE_NOJS='rewrite ^/testnet(/.*)$ " /testnet/nojs$1?" permanent;'
     fi
+    if [ "${NETWORK}" == "regtest" ]; then
+        NGINX_PATH="dao-testnet/"
+        NGINX_NOSLASH_PATH="dao-testnet"
+        NGINX_REWRITE='rewrite ^/dao-testnet(/.*)$ $1 break;'
+        NGINX_REWRITE_NOJS='rewrite ^/dao-testnet(/.*)$ " /dao-testnet/nojs$1?" permanent;'
+    fi
 else
     ELECTRS_NETWORK="liquid"
     PARENT_NETWORK="--parent-network mainnet"
